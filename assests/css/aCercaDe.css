@@ -1,0 +1,37 @@
+
+.sec-flex{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+.sec-flex img{
+    
+    border: 2px solid;
+    width: 20%;
+    height: 20%;
+    padding: 5%;
+    border-radius: 25%;
+}
+.sec-flex div{
+    padding: 22px;
+    border-radius: 5%;
+}
+
+.flex-child{
+    flex-wrap:wrap;
+    justify-content: space-between;
+    margin: 2%;
+    width: 40%;
+    border: 3px solid gray;
+    border-style: groove;
+}
+.flex-child p{
+   width:  60%;
+}
+.flex-child img{
+   width: 25%; 
+   padding:1px;
+   border-radius: 25%;
+   margin-top: 5%;
+}

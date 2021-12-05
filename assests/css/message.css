@@ -1,0 +1,43 @@
+.okey {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    background-color: seagreen;
+    color: white;
+    width: 40%;
+    margin: 5px 35% 5px 35%;
+}
+
+.error {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    background-color: rgb(63, 14, 7);
+    color: white;
+    width: 40%;
+    margin: 5px 35% 5px 35%;
+}
+
+.existe {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    background-color: rgba(106, 67, 17, 0.896) !important;
+    color: white;
+    width: 40%;
+    margin: 5px 35% 5px 35%;
+}
+
+.vacio {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    background-color: rgba(5, 49, 106, 0.781);
+    color: white;
+    width: 50%;
+    margin: 5px 35% 5px 25%;
+}

@@ -1,0 +1,56 @@
+.bodyforgot {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: auto;
+    height: auto;
+    background-color: rgb(177, 227, 215)!important;
+}
+
+.submit {
+    padding: 10px;
+    color: rgb(249, 251, 251);
+    background: rgb(5, 57, 59);
+    width: auto;
+    margin: 20px auto;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: rgba(5, 5, 5, 0.877);
+}
+
+.forgot {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border: solid 2px #153a39;
+}
+
+.titleForgot {
+    background-color: #01001456;
+    color: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+}
+
+.divForm {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+    border: solid 2px #548381;
+    padding-left: 2%;
+    background-color: rgba(50, 85, 93, 0.514);
+}
+
+input {
+    width: 320px;
+    margin-top: 10px;
+}
+
+.fondo {
+    background-image: url(https://image.freepik.com/foto-gratis/hermoso-borde-azul-deja-sobre-fondo-rosa_24972-574.jpg) !important;
+}

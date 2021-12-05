@@ -1,0 +1,15 @@
+.formulario{
+  border: 2px solid rgba(95, 158, 160, 0.863);
+  background-color:rgba(245, 245, 220, 0.726);
+  width:70% ;
+  margin: 2%;
+  padding: 12px;
+  margin-left: 15%;
+}
+textarea{
+padding: 2%;
+  min-width:90%;
+  max-width:90%;
+  min-height:150px ;
+  max-height:150px ;
+}

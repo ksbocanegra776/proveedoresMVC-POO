@@ -1,0 +1,42 @@
+ #formulario {
+     background-color: rgba(186, 203, 210, 0.572);
+    
+ }
+ 
+ #formulario label {
+     font-size: 18px;
+     font-weight: 600;
+     margin-left: 15px;
+     width: 50%!important;
+ }
+ 
+ #formulario input {
+     width: 50%!important;
+     margin-left: 50px;
+ }
+ 
+ #formulario select {
+     width: 50%!important;
+     margin-left: 50px;
+ }
+ 
+ .table-tbody {
+     scroll-behavior: smooth;
+     max-height: 500px;
+     overflow-y: auto;
+     display: block;
+     border: 1px solid rgba(3, 82, 58, 0.74);
+     background-color: rgba(136, 157, 167, 0.02);
+     width: 90%!important;
+     padding-top: 10px;
+     margin-left: 30%;
+     margin-right: 30%;
+
+ }
+ 
+ @media (max-width:778px) {
+     .table-tbody {
+         margin-left: 10%;
+         margin-right: 30%;
+     }
+ }

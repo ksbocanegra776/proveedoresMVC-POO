@@ -1,0 +1,87 @@
+.fondo {
+    background-image: url(assests/img/fondo3.png);
+}
+
+.form-flex {
+    display: flex;
+    margin-left: 25%;
+    width: 60%;
+    flex-direction: column;
+    text-align: left;
+    color: rgb(3, 3, 12);
+    padding: 3px;
+}
+
+.input {
+    margin-top: 18px;
+    width: 70%!important;
+    background-color: rgba(117, 169, 187, 0.781);
+    border: #07031a 2px solid;
+    border-radius: 5%;
+    margin-left: 18% !important;
+}
+
+.form-flex label {
+    width: 280px !important;
+    margin-left: 35%;
+    font-size: 20px;
+}
+
+.form-flex label:hover {
+    margin-top: 2%;
+    background: rgb(13, 14, 14);
+    border-radius: 5px 3px 5px 3px;
+    color: white;
+    text-align-last: left;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+
+
+.container {
+    display: flex;
+    flex-flow: wrap column;
+    background-color: #07031a17;
+    width: 200px;
+    height: 90%;
+    color: black;
+    padding: 2%;
+}
+
+.tit1 {
+    margin-top: 15px;
+    color: #010014;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: cursive, italic;
+    font-style: oblique;
+    padding: 18px;
+}
+
+.btns {
+    height: auto;
+    width: auto !important;
+    background-color: #094c45d0;
+    color: black !important;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
+    margin-left: 17%;
+    margin-top: 2%;
+}
+
+.checkbox {
+    list-style: none;
+    margin-top: 35px;
+}
+
+.icon {
+    width: auto!important;
+    margin-left: 35%;
+    font-size: 25px;
+}
