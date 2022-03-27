@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auxiliar</title>
+    <link rel="icon" type="image/png" href="../assets/imagenes/header-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styleGeneralModul.css">
+    <link rel="stylesheet" href="../css/auxiliar.css">
+
+</head>
+
+<body>
+    <div class="contenido " style="height: auto;">
+        <div class=" tabcontenedor">
+            <div class="text-center row">
+                <h2> Módulo Proveedores</h2>
+                <h6>Auxiliar</h6>
+                <div class="col-3"><a class='btn btn-success text-white rounded-2 ml-3 col-auto' href='../../index.html'>SALIR</a></div>
+            </div>
+
+            <div class=" paginacion ">
+                <button class="btn btn-secondary rounded-0 col-auto " onclick="location.href='auxiliar.html' " target="_self ">Buscar Proveedor</button>
+                <button class="btn btn-secondary rounded-0 col-auto" onclick="location.href='notificaciones.html' " target="_self ">Notificaciones</button>
+                <button class="btn btn-secondary rounded-0 col-auto " onclick="location.href='consultaAgenda.html' " target="_self ">Consultar Agenda</button>
+            </div>
+
+            <div class=" container-fluid ">
+
+                <div class="col-12 formulario ">
+                    <form action=" " metod=" " class="col btn-dark p-2 " id="formulario ">
+                        <div class="p-2 ">
+                            <button type="button " class="btn-info col-auto " onclick=" ">Buscar</button>
+                            <input type="text " id="buscador " value=" " class="col-auto mt-2">
+                        </div>
+                        <div class="col-12 justify-content-sm-center ">
+                            <label class="col-sm-4 " for="codProv " id=" ">codigo:</label>
+                            <input class="col-sm-5 " type="text " id="codProv " name="codProv " readonly="readonly ">
+                        </div>
+                        <div class="col-12 justify-content-sm-center ">
+                            <label class="col-sm-4 " for="razonSocial " id=" ">Razón Social:</label>
+                            <input class="col-sm-5 " type="text " id="razonSocial " name="razonSocial " readonly="readonly ">
+                        </div>
+                        <div class="col-12 justify-content-sm-center ">
+                            <label class="col-sm-4 " for="actiComercial " id=" ">Actividad
+                                Comercial:</label>
+                            <input class="col-sm-5 " type="text " id="actiComercial " name="actiComercial " readonly="readonly ">
+                        </div>
+                        <div class="col-12 justify-content-sm-center ">
+                            <label class="col-sm-4 " for="asesor " id=" ">Asesor Comercial:</label>
+                            <input class="col-sm-5 " type="text " id="asesor " name="ciudad " readonly="readonly ">
+                        </div>
+                        <div class="col-12 justify-content-sm-center ">
+                            <label class="col-sm-4 " for="telefono " id=" ">Telefono Asesor:</label>
+                            <input class="col-sm-5 " type="number " id="telefono " name="telefono " readonly="readonly ">
+                        </div>
+                        <div class="container-fluid ">
+                            <h5>Caja de comentarios</h5>
+                            <div class="col-12 justify-content-center ">
+                                <textarea name="comentAux " id="comentAux " class="comentAux "></textarea>
+                            </div>
+                        </div>
+
+                        <button type="button " onclick=" " id=" " neme=" " class="btn btn-success ">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+</body>
+
+</html>

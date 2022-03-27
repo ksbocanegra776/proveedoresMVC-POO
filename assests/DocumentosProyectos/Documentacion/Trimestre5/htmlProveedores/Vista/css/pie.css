@@ -1,0 +1,17 @@
+footer {
+    width: 100%;
+    height: auto;
+    background-color: #010014;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    font-family: cursive;
+    padding: 1%;
+    margin-top: 2%;
+}
+
+.separador {
+    background-color: transparent;
+    height: 118px;
+    width: auto;
+}

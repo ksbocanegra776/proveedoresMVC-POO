@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     width: 60%;
-    height: 40%;
+    height: 100%;
     margin-left: 20%;
     margin-right: 15%;
     border: 2px black solid;
@@ -13,7 +13,7 @@
     font-weight: bold;
     font-style: oblique;
     font-family: initial;
-    
+
 }
 
 .tit1 {
@@ -33,7 +33,7 @@
     flex-direction: column;
     justify-content: center;
     color: rgb(3, 3, 12);
-    height: auto;
+    height: 80%;
     padding: 5%;
    }
 .form-flexR select,

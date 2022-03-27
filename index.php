@@ -1,5 +1,8 @@
-<?php
-    $controller = 'LandingPageWeb';
+<?php   
+    
+    require_once 'Model/conexionDB.php';
+    conexionDB::conexion();
+        $controller = 'LandingPageWeb';
     if (!isset($_REQUEST['c'])) {
                require_once 'controller/'. $controller .'.php';
         $controller = new $controller;

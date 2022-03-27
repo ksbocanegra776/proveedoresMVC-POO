@@ -23,6 +23,8 @@ body {
     font-family: cursive;
     margin-top:auto;
     padding: 2%;
+    margin: 0;
+    
 }
 .mainAdmi{ 
     background-color:transparent;
@@ -132,44 +134,8 @@ main {
     background-color: transparent;
 }
 
-.formSearch {
-    display: flex;
-    background: rgb(5, 5, 5);
-    justify-content: center;
-    border: 2px solid rgb(180, 152, 132);
-    border-radius: 10px;
-    width: 300px;
-    height: auto;
-    padding: 10px;
-    margin-left: -25%;
-    margin-right: 12%;
-    margin-top: -6%;
-}
 
-.formSearch .search {
-    display: flex;
-    justify-content: center;
-    width: auto;
-    height: auto;
-    background: black;
-    cursor: pointer;
-    padding: 2px;
-    border-radius: 25px;
-    color: white;
-    font-weight: 600;
-    margin-top: -5px;
-}
 
-.containerFormSearch {
-    margin-left: 20%;
-    padding: 5%;
-    width: 100%;
-}
-
-.containerFormSearch input {
-    width: 400px;
-    text-align: center;
-}
 
 #formulario label {
     font-size: 18px;
@@ -190,39 +156,42 @@ main {
     justify-content: center;
     border: 2px solid rgb(180, 152, 132);
     border-radius: 10px;
-    width: 300px;
-    height: auto;
+    width:480px;
+    height: 50px;
     padding: 10px;
-    margin-left: -25%;
-    margin-right: 12%;
+    margin-left: -5%;
+    margin-right: 5%;
     margin-top: -6%;
+
 }
 
 .formSearch .search {
+      
     display: flex;
+    background: rgb(5, 5, 5);
     justify-content: center;
-    width: auto;
-    height: auto;
-    background: black;
+    border: 2px solid rgb(180, 152, 132);
+    border-radius: 10px;
+    color: white;
     cursor: pointer;
     padding: 2px;
-    border-radius: 25px;
-    color: white;
-    font-weight: 600;
-    margin-top: -5px;
+    margin-left: 0%;
+    margin-right: 1%;
+    margin-top: -4%;
 }
-
+ 
 .containerFormSearch {
-    margin-left: 17%;
+ 
+    margin-left: 12%;
     padding: 5%;
-    width: 91%;
+    width: 80%;
 }
 
 .containerFormSearch input {
-    width: 70%;
+    width: auto;
     text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 40%;
+  
 }
 
 #formulario label {
@@ -288,4 +257,5 @@ main {
         height: 100%!important;
         min-height: 900px;
     }
+    
 }

@@ -1,110 +1,104 @@
-<head>
-    <meta charset='utf-8' />
-    <link href='assests/lib/main.css' rel='stylesheet' />
-    <link rel="icon" type="image/png" href="assests/img/header-logo.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src='assests/lib/main.js'></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
+<body class="bodyCalendary">
 
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+    <button type="button" class="tabButtonCalendary rounded-circle col-4" onclick="location.href='?c=InitAdmin'" target="_self">Volver</button>
+    
+    <div class="container">
+        <div class="col-md-8 offset-md-2">
+            <div id='calendar'></div>
+        </div>
+    </div>
+   
+    <div class="modal fade" id="modalCalendar" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title font-italic text-white-50" id="titulo"></h5>
+                </div>
 
-                },
-                initialDate: '2020-09-12',
-                navLinks: true, // can click day/week names to navigate views
-                businessHours: true, // display business hours
-                editable: true,
-                selectable: true,
-                events: [{
-                        title: 'Business Lunch',
-                        start: '2020-09-03T13:00:00',
-                        constraint: 'businessHours'
-                    }, {
-                        title: 'Meeting',
-                        start: '2020-09-13T11:00:00',
-                        constraint: 'availableForMeeting', // defined below
-                        color: '#257e4a'
-                    }, {
-                        title: 'Conference',
-                        start: '2020-09-18',
-                        end: '2020-09-20'
-                    }, {
-                        title: 'Party',
-                        start: '2020-09-29T20:00:00'
-                    },
+                <form id="formCalendar" name="formCalendar" class="embed-responsive-16by9">
+                    <div class="modal-body">
+                        <input type="hidden" name="id_evento" id="id_evento">
+                        <div class="mb-3 form-floating">
+                            
+                            <label for="codEvent" class="form-label p-2 ">Codigo Evento</label>
+                            <input type="text" name="codEvent" class="form-control p-2 mt-4 btn-outline-secondary text-center" placeholder="Iniciales evento + dia (Fecha)" id="codEvent">
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <label for="eventMot" class="form-label p-2 ">Motivo evento</label>
+                            <select name="eventMot" id="eventMot" class="form-control p-2 mt-4 btn-btn-outline-light text-center">
+                                <option value="N/A">Seleccionar Evento</option>
+                                <option value="PGF">Pago Factura</option>
+                                <option value="HP">Hacer Pedido</option>
+                                <option value="RP">Recibir Pedido</option>
+                                <option value="CM">Cambio Mercancia</option>
+                                <option value="DP">Devolución Mercancia</option>
+                                <option value="Otros">Otros</option>
 
-                    // areas where "Meeting" must be dropped
-                    {
-                        groupId: 'availableForMeeting',
-                        start: '2020-09-11T10:00:00',
-                        end: '2020-09-11T16:00:00',
-                        display: 'background'
-                    }, {
-                        groupId: 'availableForMeeting',
-                        start: '2020-09-13T10:00:00',
-                        end: '2020-09-13T16:00:00',
-                        display: 'background'
-                    },
+                            </select>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <label for="proveedorCod" class="form-label p-2 text-center ">Proveedor Agendado</label>
+                            <select name="proveedorCod" id="proveedorCod" class="form-control p-2 mt-4 btn-btn-outline-light text-center">
+                                <option value="N/A">Seleccionar Proveedor</option>
+                                <option value="tm123">textilex martha</option>
+                                <option value="lf444">lacteos flores</option>
+                                <option value="tm698">textiles mathi</option>
 
-                    // red areas where no events can be dropped
-                    {
-                        start: '2020-09-24',
-                        end: '2020-09-28',
-                        overlap: false,
-                        display: 'background',
-                        color: '#ff9f89'
-                    }, {
-                        start: '2020-09-06',
-                        end: '2020-09-08',
-                        overlap: false,
-                        display: 'background',
-                        color: '#ff9f89'
-                    }
-                ]
-            });
+                            </select>
+                            <!--   <select name="proveedorCod" id="proveedorCod"class="form-control p-2 mt-4 btn-btn-outline-light">
+                                <option value="
+                                                <?php
 
-            calendar.render();
-        });
-    </script>
-    <style>
-        body {
-            margin: 40px;
-            padding: 2px;
-            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-            font-size: 14px;
-            background-color: #629598;
-            width: 90%;
-        }
-        
-        #calendar {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .tabButton {
-            background-color: #06070ed7;
-            color: white;
-            margin-bottom: 15px;
-            width: auto;
-            padding: 15px;
-            height: auto;
-            font-size: 15px;
-            font-weight: 600;
-            box-shadow: rgba(93, 173, 226, 0.7) 3px 3px 2px, rgba(133, 193, 233, 0.7) 4px 4px 3px, rgba(93, 173, 226, 0.7) 5px 5px 4px, rgba(23, 32, 42, 1) 13px 13px 15px;
-        }
-    </style>
-</head>
+                                                if (isset($_GET['rt']) != "") {
+                                                    $proveAs = $_GET['rt'];
+                                                    foreach ($proveAs as $proveAs) : ?>
+                                                        <?php echo $proveAs['cod_proveedor'] ?>
 
-<body>
+                                                        <?php endforeach;
+                                                }
+                                                        ?>
+                            "> <?php if (isset($proveAs['razon_social'])) {
+                                    echo $proveAs['razon_social'];
+                                }   ?>
+                             </option>
+                           
+                            </select> -->
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <label for="dateEvent" class="form-label p-2 ">Fecha</label>
+                            <input type="date" name="dateEvent" class="form-control p-2 text-center btn-outline-secondary" id="dateEvent">
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <label for="statusEvent" class="form-label p-2 text-center ">estado Agendamiento</label>
+                            <select name="statusEvent" id="statusEvent" class="form-control p-2 mt-4 btn-btn-outline-light text-center">
+                                <option value="N/A">Seleccionar estado</option>
+                                <option value="Agen">Agendado</option>
+                                <option value="Canc">Cancelado</option>
+                                <option value="Pen">Pendiente</option>
+                                <option value="Re-Ag">Reagendar</option>
+                            </select>
 
-    <button type="button" class="tabButton rounded-circle col-3" onclick="location.href='?c=InitAdmin'" target="_self">Volver</button>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <label for="colorPriority" class="form-label p-2 text-center">Prioridad</label>
+                            <input type="color" name="colorPriority" class="form-control p-4 btn-outline-secondary" id="colorPriority">
+                        </div>
 
-    <div id='calendar'></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="close" class="btn btn-warning" onclick="location.href='?c=ModulsAdminController&a=agenda'">Cerrar</button>
+                        <button type="button" class="btn btn-danger" id="eliminar">Eliminar</button>
+                        <button type="submit" class="btn btn-success" id="btnSave">Guardar</button>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
 
 </body>
 
+</html>

@@ -1,0 +1,76 @@
+.fondo {
+    background-image: url(../../assets/imagenes/fondo3.png)!important;
+}
+
+.container-contact {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin-left: 20%;
+    padding: 2%;
+    border: 2px black solid;
+    border-radius: 28px 15px 28px 35px;
+    box-shadow: rgba(93, 173, 226, 0.7) 8px 8px 2px, rgba(133, 193, 233, 0.7) 9px 9px 3px, rgba(93, 173, 226, 0.7) 10px 10px 4px, rgba(23, 32, 42, 1) 13px 13px 15px;
+    background-color: transparent;
+    font-weight: bold;
+    font-style: oblique;
+    font-family: initial;
+}
+
+.tit1 {
+    margin-top: 15px;
+    color: #010014;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: italic;
+    font-style: oblique;
+    padding: 18px;
+}
+
+.form-flex {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: rgb(3, 3, 12);
+}
+
+.input-form input {
+    width: 90%;
+    background-color: #f6f7f8d2;
+    border: #07031a 2px solid;
+    border-radius: 5%;
+    color: rgb(0, 0, 0);
+    margin-left: 5%;
+}
+
+.input-form input:hover {
+    background-color: rgba(13, 14, 14, 0.898);
+    color: white;
+    font-family: cursive;
+    font-weight: 200;
+    font-size: 16px;
+    border-radius: 4px 3px 5px 3px;
+    margin-left: 5px;
+}
+
+.form-button {
+    text-align: right;
+    margin-top: 5px;
+}
+
+.form-button button {
+    width: 70px;
+    height: 35px;
+    background-color: green;
+    border-radius: 2%;
+    color: whitesmoke;
+    border: 5px solid;
+    padding: 2px;
+}
+
+.form-button button:hover {
+    width: 100px;
+    height: 40px;
+    border: 2px solid;
+}

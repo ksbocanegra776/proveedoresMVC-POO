@@ -7,14 +7,14 @@
                     <h2 class="text-white">Olvido su contraseña?</h2>
                     <p class="text-white">Mostrar contraseña</p>
                 </div>
-
+                <div class="col-12"><?php require_once "controller/dictionaryException.php";?></div>
                 <div class="divForm">
 
-                    <form method="POST">
+                    <form method="POST" action="?c=LoginUserController&a=watchData">
 
                         <p class="text-white"> Email:</p>
                         <div>
-                            <input type="text" name="user" id="user" autocomplete="off" class="box"></br>
+                            <input type="text" name="email" id="email" autocomplete="off" class="box"></br>
                         </div>
                         <br>
                         <p class="text-white">Datos de seguridad:</br>

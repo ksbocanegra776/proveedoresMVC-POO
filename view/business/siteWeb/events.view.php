@@ -1,4 +1,4 @@
-<main class="bodyforgot">
+<main>
 
     <div style="margin: 15px 25px 25px 25px;">
         <div aling="center">

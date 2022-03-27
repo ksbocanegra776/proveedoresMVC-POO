@@ -1,16 +1,16 @@
 <?php
 
-    class LandingPageWeb{
+   class LandingPageWeb{
+  public function __construct()
+  {
+  }
+   
+      public function index(){
 
-        public function __construct()
-        {    
-        }
-
-        public function index(){
           require_once 'view/roles/business/header.php';
           require_once 'view/business/index.view.php';
           require_once 'view/roles/business/footer.php';
-        }
+        } 
         public function about(){
           require_once 'view/roles/business/header.php';
           require_once 'view/business/siteWeb/about.view.php';
@@ -21,12 +21,17 @@
           require_once 'view/business/siteWeb/contact.view.php';
           require_once 'view/roles/business/footer.php';
         }
+        public function contactSend(){
+           require_once 'controller/contactController.php';
+         
+        }
         public function login(){
           require_once 'view/roles/business/header.php';
           require_once 'view/business/siteWeb/login.view.php';
           require_once 'view/roles/business/footer.php';
         }
-        public function register(){
+        public function register()
+        {
           require_once 'view/roles/business/header.php';
           require_once 'view/business/siteWeb/register.view.php';
           require_once 'view/roles/business/footer.php';
@@ -48,4 +53,3 @@
         }
 
     }
-?>

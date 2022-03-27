@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modulo admin</title>
+    <script src="https://kit.fontawesome.com/2760202cbd.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="../../assets/imagenes/header-logo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/usuarios.css">
+    <link href="../css/menuDashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styleGeneralModul.css">
+</head>
+
+<body>
+    <div class="menu-lateral">
+        <h4 class="text-center ">MENU</h4>
+        <ul>
+
+            <li id="opcion1">
+                <a href='#opcion1' class="text-center text-dark text-decoration-none ml-2">Inicio</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/adminPrincipal.html'" target="_self">Inicio</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="opcion2">
+                <a href='#opcion2' class="text-center text-dark text-decoration-none ml-2">Proveedores</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/registroProveedor.html'" target="_self">Crear Proveedores</a>
+                    </li>
+                    <li>
+                        <a onclick="location.href='../adminUser/buscarProveedor.html'" target="_self">Buscar Proveedores</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="opcion3">
+                <a href='#opcion3' class="text-center text-dark text-decoration-none ml-2">Asesores</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/dataAsesor.html'" target="_self">Asesores</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="opcion4">
+                <a href='#opcion4' class="text-center text-dark text-decoration-none ml-2">Usuarios</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/usuarios.html'" target="_self">Usuarios</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="opcion5">
+                <a href='#opcion5' class="text-center text-dark text-decoration-none ml-2">Comentarios</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/comentarioProveedor.html'" target="_self">Comentarios</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="opcion6">
+                <a href='#opcion6' class="text-center text-dark text-decoration-none ml-2">Agendamiento</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/agendamientoProveedor.html'" target="_self">Agendamiento</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <div class="contenido">
+
+        <div class="row mt-1 p-2">
+            <button class="btn btn-secondary  col-2" onclick="location.href='dataAsesor.html'" target="_self">Regresar</button>
+            <h1 class="text-center col">Actualizar de usuarios</h1>
+        </div>
+        <div class="container-fluid ">
+            <form action="../../controller/updateAs.php" method="post" style="padding:15px;" class="form contenedor container-fluid ">
+                <div class="container ">
+                    <table class="table table-bordered bg-light text-center table-responsive">
+                        <thead class="bg-secondary">
+                            <tr class=" justify-content-between" style="color:wheat;">
+                                <td class="p-2 col-3 text-center">Codigo</td>
+                                <td class="p-2 col-3 text-center">Nombre</td>
+                                <td class="p-2 col-3 text-center">Apellido</td>
+                                <td class="p-2 col-4 text-center">2th Apellido</td>
+                                <td class="p-2 col-5 text-center">Teléfono</td>
+                                <td class="p-2 col-3 text-center">Estado</td>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td> <input type="text" class="p-1 col text-center" name="codigo" disabled></td>
+                                <td> <input type="text" class="p-1 col text-center" name="nombre" disabled></td>
+                                <td><input type="text" class="p-1 col text-center" name="apellido" disabled></td>
+                                <td><input type="text" class="p-1 col text-center" name="apellidoDos" disabled></td>
+                                <td><input type="number" class="p-1 col text-center" name="telefono"></td>
+                                <input type="number" name="idAs" class="text-center w-50 " style="font-size: x-large; color:teal;">
+                                <td> <input type="text" class="p-1 col text-center" name="estado" disabled></td>
+                            </tr>
+                        </tbody>
+
+                        <input type="submit" class="col-2 btn-info m-3" name="updateAsesor" value="Guardar">
+                    </table>
+            </form>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="../js/abrirMenu.js"></script>
+        <script src="../js/buscar.js"></script>
+
+
+</body>
+
+</html>

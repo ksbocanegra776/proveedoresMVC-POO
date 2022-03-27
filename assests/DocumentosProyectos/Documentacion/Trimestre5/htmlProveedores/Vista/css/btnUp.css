@@ -1,0 +1,40 @@
+/* .ir-arriba{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    z-index: -1;
+  }
+  .ir-arriba-boton{
+    width: 0rem;
+    height: 0rem;
+    background: #1176eb;
+    border-radius: 50%;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  .ir-arriba-boton i{
+    position: absolute;
+    font-size: 50px;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: #06070E;
+    transition: .2s;
+  }
+  .show{
+    z-index: 10;
+  }
+  .show .ir-arriba-boton{
+    animation: popup .3s ease-in-out;
+    width: 50px;
+    height: 50px;
+    z-index: 11;
+  }
+  .show i{
+    transform: translate(-50%, -50%) scale(1);
+  } */

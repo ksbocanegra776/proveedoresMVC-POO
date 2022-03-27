@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="icon" type="image/png" href="../../assets/imagenes/header-logo.png">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styleGeneralModul.css">
+    <link href="../css/menuDashboard.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <nav style="width: auto;height: 640px;">
+        <div class="menu-lateral">
+            <h4 class="text-center ">MENU</h4>
+            <ul>
+
+                <li id="opcion1">
+                    <a href='#opcion1' class="text-center text-dark text-decoration-none ml-2">Inicio</a>
+                    <ul>
+                        <li>
+                            <a onclick="location.href='../adminUser/adminPrincipal.html'" target="_self">Inicio</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="opcion2">
+                    <a href='#opcion2' class="text-center text-dark text-decoration-none ml-2">Proveedores</a>
+                    <ul>
+                        <li>
+                            <a onclick="location.href='../adminUser/registroProveedor.html'" target="_self">Crear Proveedores</a>
+                        </li>
+                        <li>
+                            <a onclick="location.href='../adminUser/buscarProveedor.html'" target="_self">Buscar Proveedores</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="opcion3">
+                    <a href='#opcion3' class="text-center text-dark text-decoration-none ml-2">Asesores</a>
+                    <ul>
+                        <li>
+                            <a onclick="location.href='../adminUser/dataAsesor.html'" target="_self">Asesores</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="opcion4">
+                    <a href='#opcion4' class="text-center text-dark text-decoration-none ml-2">Usuarios</a>
+                    <ul>
+                        <li>
+                            <a onclick="location.href='../adminUser/usuarios.html'" target="_self">Usuarios</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="opcion5">
+                    <a href='#opcion5' class="text-center text-dark text-decoration-none ml-2">Comentarios</a>
+                    <ul>
+                        <li>
+                            <a onclick="location.href='../adminUser/comentarioProveedor.html'" target="_self">Comentarios</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="opcion6">
+                    <a href='#opcion6' class="text-center text-dark text-decoration-none ml-2">Agendamiento</a>
+                    <ul>
+                        <li>
+                            <a onclick="location.href='../adminUser/agendamientoProveedor.html'" target="_self">Agendamiento</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <div class="contenido">
+            <div class="col-12">
+                <?php require "sessionAdmi.php"; ?>
+            </div>
+
+            <div class="principalContainer limit">
+                <div class="text-center mt-5">
+                    <h4> Actualizar Proveedores</h4>
+                </div>
+                <div class="paginacion m-6">
+                    <button class="btn btn-secondary rounded-0 col-4" onclick="location.href='buscarProveedor.html'" target="_self">Consultar  Proveedor</button>
+                    <button class="btn btn-secondary rounded-0 col-4" onclick="location.href='registroProveedor.html'" target="_self">Ingresar Proveedor </button>
+                </div>
+                <div style="  width: 90%;margin-left: 8%;margin-right: 10%;" class="col-auto">
+                    <section class="justify-content-md-start" style="width: 100%; margin-left: -5%;">
+                        <form action=" " method=" " class="col-8 form1" id="formulario ">
+                            <h3 class="ml-5 ">Información en bases de datos</h3>
+
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 " for="codProvee " id=" ">Codigo Proveedor:</label>
+                                <input class="col-6 text-center p-2 ml-5 " type="text " id="codProvee " name="codProvee " value=" " disabled>
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 " for="razonSocial ">Razón Social:</label>
+                                <input class="col-6 text-center p-2 ml-5 " type="text " id="razonSocial " name="razonSocial " value=" " disabled>
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 " for="actiComercial " id=" ">Actividad
+                                        Comercial:</label>
+                                <input class="col-6 text-center p-2 ml-5 " type="text " id="actividadcomercial " name="actividadcomercial " value=" " disabled>
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 " for="ciudad " id=" ">Ciudad :</label>
+                                <input class="col-6 text-center p-2 ml-5 " type="text " id="ciudad "  name="ciudad " value=" " disabled>
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 " for="departamento " id=" ">Departamento:</label>
+                                <input class="col-6 text-center p-2 ml-5 " type="text " id="departamento " name="departamento " value=" " disabled>
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 " for="direccion " id=" ">Dirección :</label>
+                                <input class="col-6 text-center p-2 ml-5 " type="text " id="direccionEmpresa " name="direccionEmpresa " value=" " disabled>
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 " for=" " id=" ">Teléfono Empresa :</label>
+                                <input class="col-6 text-center p-2 ml-5 " type="text " id="telefonoEmpresa " name="telefonoEmpresa " value=" " disabled>
+                            </div>
+
+                            <div class="col-12 justify-content-sm-center " name="info ">
+                                <label class="col-3 " for="tipoConvenio " id=" ">Tipo convenio:</label>
+                                <input class="col-6 text-center p-2 ml-5 " type="text " id="tipoConvenio " name="tipoConvenio " value=" " disabled>
+                            </div>
+                            <!--             <input class="col-6 text-center p-2 ml-5 " type="hidden " id="id " name="id " value=" " disabled>
+
+ -->
+                    </section>
+                    <section>
+                        </form>
+
+                        <form method="post " action="../../controller/controllerUpdateProv.php " class="col-auto form2" id="formulario " style="width: 50%;margin-top: -32%;margin-left: 50%;">
+                            <h4 class="ml-3 mt-1">Campo de actualizaciones</h4>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-1 labelForm " for="codProvee " id=" ">⇒</label>
+                                <input class="col-8 text-center p-2 " type="text " id="codProvee " name="codProvee " value=" " disabled>
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-1 labelForm " for="razonSocial ">⇒</label>
+                                <input class="col-8  text-center p-2 " type="text " name="razonS " value=" " disabled>
+                            </div>
+                            <div class="col-12   justify-content-sm-center ">
+                                <label class="col-1 labelForm " for="actiComercial ">⇒
+                                </label>
+                                <input class="col-8  text-center p-2 " type="text " name="actiComercial " value=" ">
+                            </div>
+                            <div class="col-12   justify-content-sm-center ">
+                                <label class="col-1 labelForm " for="city " id=" ">⇒</label>
+                                <input class="col-8  text-center p-2 " type="text " name="city " value=" ">
+                            </div>
+                            <div class="col-12   justify-content-sm-center ">
+                                <label class="col-1 labelForm " for="departament " id=" ">⇒
+                                </label>
+                                <input class="col-8  text-center p-2 " type="text " name="departament " value=" ">
+                            </div>
+                            <div class="col-12   justify-content-sm-center ">
+                                <label class="col-1 labelForm " for="direccion " id=" ">⇒</label>
+                                <input class="col-8  text-center p-2 " type="text " name="direc " value=" ">
+                            </div>
+                            <div class="col-12   justify-content-sm-center ">
+                                <label class="col-1 labelForm " for="telefono " id=" ">⇒</label>
+                                <input class="col-8  text-center p-2 " type="text " name="telef " value=" ">
+                            </div>
+                            <div class="col-12   justify-content-sm-center " name="info ">
+                                <label class="col-1 labelForm " for="tipoConv ">⇒</label>
+                                <select name="tipoConv " class="col-8 text-center p-2" style="font-size: 18px;font-weight: 600; margin: 0%; ">
+                                    <?php foreach ($seleccion as $datos) {
+                                    ?>
+                                        <option class=" text-center p-2 " value=" "></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <!-- <td><input type="hidden " name="idP " value=" "></td> -->
+
+                            <div class=" col-12  mt-4 ">
+                                <button type="button " class="ml-2 col-auto btn btn-info p-2 " onclick="location.href='buscarProveedor.html' " target="_self ">Regresar</button>
+                                <input type="submit " name="saveUpdate " value="Guardar " class="ml-2 col-3 btn btn-success p-2 ">
+
+                                <td><a href="createAsesor.html " class='col-auto mt-1 p-2 ml-2 btn btn-secondary'>Cambiar Asesor</a></td>
+
+                            </div>
+                        </form>
+
+                    </section>
+                </div>
+            </div>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+
+
+</body>
+
+</html>

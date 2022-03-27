@@ -1,13 +1,15 @@
 <?php
-$databaseHost='localhost';
-$databaseName='proveedores';
-$databaseUsername='root';
-$databasePassword='';
-try{
-    $dbConex= new PDO ("mysql:host={$databaseHost};dbname={$databaseName}",$databaseUsername,$databasePassword);
-    $dbConex->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-   
-}catch(PDOException $e){
-echo $e->getMessage();
+
+class ConexionDB {
+
+    public static function conexion(){
+
+            $conn= new PDO('mysql:host=localhost;dbname=proveedores;charset=utf8','root','');
+            $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            return $conn;
+           
+    }
+
 }
+
 ?>

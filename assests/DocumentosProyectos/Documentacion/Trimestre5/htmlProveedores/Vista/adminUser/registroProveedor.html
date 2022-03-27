@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveedor Nuevo</title>
+    <link rel="icon" type="image/png" href="../../assets/imagenes/header-logo.png">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styleGeneralModul.css">
+    <link rel="stylesheet" href="../css/registroProveedor.css">
+    <link rel="stylesheet" href="../css/btnUp.css">
+    <link rel="stylesheet" href="../css/menuDashboard.css">
+
+</head>
+
+<body>
+    <main>
+
+        <nav style="width: auto;height: 200%;background-image: url(../../assets/imagenes/fondo3.png);background-size: cover;background-repeat:no-repeat; background-attachment:fixed;">
+            <div class="menu-lateral">
+                <h4 class="text-center ">MENU</h4>
+                <ul>
+
+                    <li id="opcion1">
+                        <a href='#opcion1' class="text-center text-dark text-decoration-none ml-2">Inicio</a>
+                        <ul>
+                            <li>
+                                <a onclick="location.href='../adminUser/adminPrincipal.html'" target="_self">Inicio</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="opcion2">
+                        <a href='#opcion2' class="text-center text-dark text-decoration-none ml-2">Proveedores</a>
+                        <ul>
+                            <li>
+                                <a onclick="location.href='../adminUser/registroProveedor.html'" target="_self">Crear Proveedores</a>
+                            </li>
+                            <li>
+                                <a onclick="location.href='../adminUser/buscarProveedor.html'" target="_self">Buscar Proveedores</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="opcion3">
+                        <a href='#opcion3' class="text-center text-dark text-decoration-none ml-2">Asesores</a>
+                        <ul>
+                            <li>
+                                <a onclick="location.href='../adminUser/dataAsesor.html'" target="_self">Asesores</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="opcion4">
+                        <a href='#opcion4' class="text-center text-dark text-decoration-none ml-2">Usuarios</a>
+                        <ul>
+                            <li>
+                                <a onclick="location.href='../adminUser/usuarios.html'" target="_self">Usuarios</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="opcion5">
+                        <a href='#opcion5' class="text-center text-dark text-decoration-none ml-2">Comentarios</a>
+                        <ul>
+                            <li>
+                                <a onclick="location.href='../adminUser/comentarioProveedor.html'" target="_self">Comentarios</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="opcion6">
+                        <a href='#opcion6' class="text-center text-dark text-decoration-none ml-2">Agendamiento</a>
+                        <ul>
+                            <li>
+                                <a onclick="location.href='../adminUser/agendamientoProveedor.html'" target="_self">Agendamiento</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        </div>
+        <div class=" contenido ">
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi
+                        bi-arrow-bar-right menu-bar icono" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0
+                            .5.5h5.793l-2.147
+                            2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0
+                            0-.708l-3-3a.5.5 0
+                            0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5
+                            0 0
+                            1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z" />
+            </svg>
+            <div class=" table-responsive-xl" style="height: auto;width:100%;">
+                <div class="text-center">
+                    <h2> Agregar Nuevo proveedor</h2>
+                </div>
+                <div class="paginacion m-6">
+                    <button class="btn btn-secondary rounded-0 col-4" onclick="location.href='buscarProveedor.html'" target="_self">Consultar  Proveedor</button>
+                    <button class="btn btn-secondary rounded-0 col-4" onclick="location.href='registroProveedor.html'" target="_self">Ingresar Proveedor </button>
+                </div>
+                <div class="row table-responsive-xl container-fluid" id="formulario" style="height:auto;width:65%;">
+
+                    <div class="container-fluid table-responsive-md " style="height:100;width:100%;">
+                        <form action="" method="post" class="col-12  mt-1">
+
+                            <div class="col-12 justify-content-sm-center">
+
+                                <label for="codProve" class=" col-3 labelForm ">Codigo</label>
+
+                                <input id="codProve " class=" col-8 " name="codProve " type="text " required placeholder=" codigo Unico Proveedor ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label for="tipoDoc " class="col-3 labelForm ">Tipo documento</label>
+                                <select name="tipoDoc " class="col-8  ">
+                                <?php foreach ($seleccion as $datos) {
+                                ?>
+                                    <option value=" "></option>
+                                <?php } ?>
+                            </select>
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="documento " id=" ">Número Documento:</label>
+                                <input class="col-8  " type="number " id="documento " name="documento ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="razonSocial " id=" ">Razón Social:</label>
+                                <input class="col-8 " type="text " id="razonSocial " name="razonSocial ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="actiComercial " id=" ">Actividad
+                                Comercial:</label>
+                                <input class="col-8 " type="text " id="actiComercial " name="actiComercial ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="city " id=" ">Ciudad:</label>
+                                <input class="col-8 " type="text " id="city " name="city ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="deparment " id=" ">Departamento:</label>
+                                <input class="col-8 " type="text " id="deparment " name="deparment ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="address " id=" ">Dirección:</label>
+                                <input class="col-8  " type="text " id="address " name="address ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="infotel " id=" ">Teléfono Empresa:</label>
+                                <input class="col-8  " type="text " id=" " name="infotel ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center  ">
+
+                                <label for="codProve " class="col-3 labelForm ">Codigo Asesor:</label>
+
+                                <input id="codProve " name="codAsesor " class="col-8  " type="text " required placeholder=" codigo Unico Asesor ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="asesorCode " id=" ">Asesor Comercial Código:</label>
+                                <input class="col-8 " type="text " id="asesorCode " name="asesorCode " value=" ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="asesorName " id=" ">Asesor Comercial Nombre:</label>
+                                <input class="col-8  " type="text " id="asesorName " name="asesorName ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="asesorLastName " id=" ">Asesor Comercial Apellido:</label>
+                                <input class="col-8  " type="text " id="asesorLastName " name="asesorLastName ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="correoAsesor " id=" ">Correo:</label>
+                                <input class="col-8 " type="text " id="correoAsesor " name="correoAsesor ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="celPhone " id=" ">Celular Asesor:</label>
+                                <input class="col-8  " type="number " id="celPhone " name="celPhone ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="dateInit " id=" ">Fecha inicio actividad:</label>
+                                <input class="col-8 " type="date " id="dateInit " name="dateInit ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="email " id=" ">Email Empresa:</label>
+                                <input class="col-8  " type="email " id="email " name="email ">
+                            </div>
+                            <div class="col-12 justify-content-sm-center ">
+                                <label class="col-3 labelForm " for="typeStatus " id=" ">Estado Proveedor:</label>
+                                <select name="typeStatus " class="col-8  ">
+                                <?php foreach ($seleccion3 as $datos) {
+                                ?>
+                                    <option value=" "></option>
+                                <?php } ?>
+                            </select>
+                            </div>
+                            <div class="col-12 justify-content-sm-center " name="info ">
+                                <label class="col-3 " for="tipoConvenio " id=" ">Tipo convenio:</label>
+                                <select name="tipoConvenio " class="col-8 ">
+                                <?php foreach ($seleccion2 as $datos) {
+                                ?>
+                                    <option value=" "></option>
+                                <?php } ?>
+                            </select>
+                            </div>
+                            <input type="submit " name="saveProvee " value="Guardar " style="margin-top: -1200px;margin-left:-20% " class="btn btn-success col-2 m-2"></br>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+    <script src="../js/abrirMenu.js "></script>
+</body>
+
+</html>

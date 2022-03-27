@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../../assets/imagenes/header-logo.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="assests/css/styleGeneralModul.css" rel="stylesheet">
     <link href="assests/css/menuDashboard.css" rel="stylesheet">
     <link href="assests/css/usuarios.css" rel="stylesheet">
@@ -14,8 +13,8 @@
     <link href="assests/css/btnUp.css" rel="stylesheet">
     <link href="assests/css/registroProveedor.css" rel="stylesheet">
     <link href="assests/css/tratamientoD.css" rel="stylesheet" type="text/css" />
-
-    <title>Principal Proveedores</title>
+    <link href="assests/css/actualizarProveedores.css" rel="stylesheet" type="text/css" />
+    <title> Proveedores</title>
 </head>
 
 <body>

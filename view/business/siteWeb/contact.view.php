@@ -4,10 +4,10 @@
         <p class="tit2 text-center col-12">
             Déjanos tus felicitaciones sugerencias quejas y reclamos.
         </p>
-
+         <?php require_once "controller/dictionaryException.php"?>
         <div class="container-data col-auto"style="background-image: url(assests/img/fondo2.png)!important;">
             <div class="form-usuarios">
-                <form method="post" action="" class="container-form table-responsive" id="formulario">
+                <form method="post" action="?c=LandingPageWeb&a=contactSend" class="container-form table-responsive" id="formulario">
                     <div class="input-form">
                         <div class="labelUser">
                             <label for="nombre">Nombre:</label>

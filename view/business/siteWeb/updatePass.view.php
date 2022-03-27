@@ -5,11 +5,12 @@
                 <h2 class="text-white">Olvido su contraseña?</h2>
                 <p class="text-white">Cambiar contraseña</p>
             </div>
+            <?php require_once "controller/dictionaryException.php"?> 
             <div aling="center">
                 <div style="border: solid 1px #079B96;" aling="center">
 
                     <div style="margin: 15px;" class="divForm">
-                        <form action="" method="POST">
+                        <form action="?c=LoginUserController&a=validatePassUser" method="POST">
                             </br>
                             <p class="text-white">Email:</p>
                             <input type="text" name="email" autocomplete="off" class="box">
@@ -33,9 +34,9 @@
                             <hr>
                             <hr>
                             <h6> Nueva Contraseña</h6>
-                            <input type="password" name="passNew" class="box" autocomplete="off">
+                            <input type="password" name="password" class="box" autocomplete="off">
                             <h6> Validar Nueva Contraseña</h6>
-                            <input type="password" name="passVerify" class="box" autocomplete="off">
+                            <input type="password" name="password2" class="box" autocomplete="off">
                             <hr>
                             <hr>
                             <input type="submit" name="updatePassword" class="submit" value="Actualizar">

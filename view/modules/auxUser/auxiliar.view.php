@@ -1,14 +1,29 @@
 <div class=" container-fluid ">
-
+    <?php require_once "controller/dictionaryException.php" ?>
     <div class="col-12 formulario ">
-        <form action=" " metod=" " class="col btn-dark p-2 " id="formulario ">
-            <div class="p-2 ">
-                <button type="button " class="btn-info col-auto " onclick=" ">Buscar</button>
-                <input type="text " id="buscador " value=" " class="col-auto mt-2">
-            </div>
-            <div class="col-12 justify-content-sm-center ">
+            <form action="?c=AuxiliarController&a=searchProAsr" method="post" class="col btn-dark p-2" id="formulario ">
+                <div class="ml-3 row">
+                    <input type="submit" class="btn-info col-2 text-center " value="Buscar">
+                    <div class="col-auto">
+                        <select name="selecTablaBD" id="" style="height: 29px;">
+                            <option value="D-N/A">Seleccionar</option>
+                            <option value="R-Soc">Razón Social</option>
+                            <option value="C-Pro">Código Proveedor</option>
+                            <option value="N-Doc">Documento</option>
+                            <option value="N-Ema">Email</option>
+                        </select>
+                    </div>
+                    <input type="text" id="buscador" value=" " class="col-auto">
+                </div>
+            </form>
+       <form action=" " method=" " class="col btn-dark p-2 " id="formulario ">
+            <?php 
+                if (isset($_GET['provD'])) {
+                    $_POST = $provAsrD = unserialize($_GET['provD']);
+            } ?> 
+            <div class="col-12 justify-content-sm-center mt-2 ">
                 <label class="col-sm-4 " for="codProv " id=" ">codigo:</label>
-                <input class="col-sm-5 " type="text " id="codProv " name="codProv " readonly="readonly ">
+                <input class="col-sm-5 " type="text " id="codProv " name="codProv " readonly="readonly" value="<?php  if(isset($provAsrD['razon_social'])){ echo $provAsrD['razon_social'];} ?>">
             </div>
             <div class="col-12 justify-content-sm-center ">
                 <label class="col-sm-4 " for="razonSocial " id=" ">Razón Social:</label>

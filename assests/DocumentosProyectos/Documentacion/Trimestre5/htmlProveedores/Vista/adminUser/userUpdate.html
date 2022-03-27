@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modulo admin</title>
+    <script src="https://kit.fontawesome.com/2760202cbd.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="../../assets/imagenes/header-logo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/usuarios.css">
+    <link rel="stylesheet" href="../css/styleGeneralModul.css">
+    <link href="../css/menuDashboard.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="contenido">
+
+        <div class="row mt-1 p-4">
+            <button class="btn btn-secondary  col-auto" onclick="location.href='usuarios.html'" target="_self">Regresar</button>
+            <h2 class="text-center col">Actualizar de usuarios</h2>
+        </div>
+
+        <div class="container-fluid">
+            <form method="post" action="" style="padding:15px;" class="form contenedor container-lg-fluid ">
+                <div class="container-fluid ">
+                    <table class="table table-bordered bg-light table-responsive mt-2">
+                        <thead class="bg-secondary ">
+                            <tr class=" justify-content-between col-12" style="color:wheat;">
+                                <td class="p-1 col-2 text-center">Codigo</td>
+                                <td class="p-1 col-2 text-center">Nombre</td>
+                                <td class="p-1 col-2 text-center">Apellido</td>
+                                <td class="p-1 col-2 text-center">Teléfono</td>
+                                <td class="p-1 col-2 text-center">Cargo</td>
+                                <td class="p-1 col-2 text-center">Estado</td>
+                                <td class="p-1 col-2 text-center">Horario</td>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+
+                            <input type="number" value="" name="numDocument" class="text-center w-30" style="font-size: x-large; color:teal;">
+                            <tr>
+                                <td> <input type="text" class="p-1 col text-center" value="" name="cod" disabled></td>
+                                <td> <input type="text" class="p-1 col text-center" value="" name="nombre" disabled></td>
+                                <td><input type="text" class="p-1 col text-center" value="" name="apellido" disabled></td>
+                                <td><input type="number" class="p-1 col text-center" value="" name="telefono"></td>
+                                <td><input type="number" class="p-1 col text-center" value="" name="rol"></td>
+                                <td><input type="number" class="p-1 col text-center" value="" name="estado"></td>
+                                <td>
+                                    <select name="horarios" class="p-1 col text-center">
+                                       
+                                    </select>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                        <input type="submit" class="col-auto btn-info ml-2 p-1" name="updateAux" value="Guardar">
+            </form>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="../js/abrirMenu.js"></script>
+        <script src="../js/buscar.js"></script>
+
+</body>
+
+</html>

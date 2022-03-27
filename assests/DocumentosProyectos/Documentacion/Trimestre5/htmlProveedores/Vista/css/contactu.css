@@ -1,0 +1,108 @@
+.fondo {
+    background-color: #C09BAF !important;
+    background-image: url(../../assets/imagenes/fondo3.png)!important;
+}
+
+.form-contact {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 3px 0px 10px rgba(0, 102, 51, 0.61);
+    width: 90%;
+    height: auto;
+    background-color: rgba(135, 206, 250, 0.356);
+    border-radius: 25px;
+    padding-bottom: 5%;
+    margin-left: 5% !important;
+    margin-top: 15%;
+}
+
+.tit1 {
+    color: #0f4aec;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    font-family: cursive;
+    font-style: oblique;
+    padding: 20px;
+}
+
+.container-data {
+    height: auto;
+    background-image: url(../../assets/imagenes/fondo2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 80%;
+    height: auto;
+    padding: 2%;
+    background-color: rgba(2, 14, 17, 0.11);
+}
+
+.form-usuarios {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.input-user {
+    border: 1px #06070e solid;
+    background-color: #09abc42a;
+    width: 400px;
+}
+
+.input-user:hover {
+    border: 2px #0474b4 solid;
+    background-color: #09aec450;
+    border-style: outset;
+}
+
+.labelUser {
+    color: #06070e;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+
+/*this code is for inputs and textarea.*/
+
+textarea {
+    padding: 3px 6px 5px 8px;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100px;
+    min-height: 180px;
+    border-style: dotted;
+    border-bottom: 3px solid rgb(0, 102, 0);
+    background-color: transparent;
+    font-family: Arial;
+    font-style: italic;
+    font-size: 18px;
+    color: rgb(10, 2, 2);
+}
+
+
+/*select terms and conditions*/
+
+#tyc {
+    height: 15px;
+    width: 15px;
+    color: blue;
+}
+
+#tyc:hover {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+#td {
+    height: 15px;
+    width: 15px;
+}
+
+#td:hover {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}

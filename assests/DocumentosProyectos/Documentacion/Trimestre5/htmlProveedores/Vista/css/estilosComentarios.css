@@ -1,0 +1,16 @@
+  .textarea {
+    margin: 5%;
+    border: 3px solid black;
+    background-color: powderblue;
+    max-width: 50%;
+    min-width: 75%;
+    max-height: 250px;
+    min-height: 350px;
+    border-radius: 25px;
+    padding: 2%;
+    font-family: Arial;
+    font-style: italic;
+    font-size: 18px;
+    color: whitesmoke;
+  }
+

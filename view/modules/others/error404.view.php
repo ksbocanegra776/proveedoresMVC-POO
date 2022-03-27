@@ -4,7 +4,7 @@
 			<div class="col p-0">
 				<div aria-label="breadcrumb">
 					<ol class="breadcrumb rounded-0 m-0 p-2">
-						<li class="breadcrumb-item"><a href="?c=DashBoardAdmin">Inicio</a></li>
+						<li class="breadcrumb-item"><a href="?c=InitAdmin">Inicio</a></li>
 					</ol>
 				</div>
 			</div>

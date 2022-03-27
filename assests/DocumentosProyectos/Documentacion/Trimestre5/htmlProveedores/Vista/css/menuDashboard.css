@@ -1,0 +1,105 @@
+       .menu-lateral {
+           background-color: transparent;
+           position: absolute;
+           width: 200px;
+           min-height: 100%;
+           height: 100%;
+           padding: 5px;
+           cursor: pointer;
+       }
+       
+       .menu-lateral h4 {
+           background: #0b2531;
+           color: white;
+       }
+       
+       .menu-lateral ul {
+           margin: 1px auto;
+           padding: 0;
+           font-size: 18px;
+           list-style: none;
+           width: 100%;
+           text-decoration: none;
+       }
+       
+       .menu-lateral li {
+           list-style: none;
+       }
+       
+       .menu-lateral ul li a {
+           margin-left: 50px;
+           font-size: 18px;
+           display: block;
+           padding: 5px 3px 5px 3px;
+           background-color: rgba(51, 164, 172, 0.74);
+           color: black;
+           border-bottom: 1px solid #000;
+           border-top: 1px solid #145A32;
+           text-decoration: none;
+           box-sizing: border-box;
+       }
+       
+       .menu-lateral ul li ul {
+           max-height: 0;
+           margin: 0;
+           padding: 0;
+           list-style: none;
+           overflow: hidden;
+           transition: .8s all ease-in;
+       }
+       
+       .menu-lateral ul li ul li:last-child a {
+           border-bottom: 0;
+       }
+       
+       .menu-lateral ul li ul li a {
+           padding: 10px 10px 10px 50px;
+           background: rgba(110, 165, 153, 0.698);
+           font-size: 16px;
+           border: 0;
+           box-sizing: border-box;
+           width: 100%;
+           height: auto;
+           cursor: pointer;
+           font-weight: 500;
+           display: block;
+           padding: 2px 1px 3px 0px;
+           border-bottom: 2px solid #000;
+           text-align: center;
+           margin-left: 3%;
+       }
+       
+       .menu-lateral ul li ul li:hover {
+           background-color: #0a798885 !important;
+           border-left: 30px solid white;
+           transition-property: border;
+           transition-duration: 4s;
+           margin-left: 7px;
+           color: white;
+       }
+       
+       .menu-lateral ul li ul li:hover a {
+           padding: 10px 10px 10px 40px;
+           background: #064236ea;
+           color: #000;
+           font-size: 16px;
+           border: 0;
+           text-align: center;
+           margin-left: 2px;
+           border-bottom: 1px solid rgb(245, 245, 245);
+           box-sizing: border-box;
+       }
+       
+       .menu-lateral ul li a:hover {
+           background: rgba(102, 102, 102, 0.739);
+           color: #fff !important;
+           padding: 2px!important;
+           transition-duration: 1s;
+           margin: 6px;
+           font-weight: 700;
+       }
+       
+       .menu-lateral ul li:target ul {
+           max-height: 300px;
+           transition: 5s all ease-in;
+       }

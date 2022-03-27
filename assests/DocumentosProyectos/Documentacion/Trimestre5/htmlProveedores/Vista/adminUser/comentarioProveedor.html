@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="icon" type="image/png" href="../../assets/imagenes/header-logo.png">
+    <link rel="stylesheet" href="../vista/Css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styleGeneralModul.css">
+    <link rel="stylesheet" href="../css/estilosComentarios.css">
+    <link href="../css/menuDashboard.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="menu-lateral">
+        <h4 class="text-center ">MENU</h4>
+        <ul>
+
+            <li id="opcion1">
+                <a href='#opcion1' class="text-center text-dark text-decoration-none ml-2">Inicio</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/adminPrincipal.html'" target="_self">Inicio</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="opcion2">
+                <a href='#opcion2' class="text-center text-dark text-decoration-none ml-2">Proveedores</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/registroProveedor.html'" target="_self">Crear Proveedores</a>
+                    </li>
+                    <li>
+                        <a onclick="location.href='../adminUser/buscarProveedor.html'" target="_self">Buscar Proveedores</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="opcion3">
+                <a href='#opcion3' class="text-center text-dark text-decoration-none ml-2">Asesores</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/dataAsesor.html'" target="_self">Asesores</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="opcion4">
+                <a href='#opcion4' class="text-center text-dark text-decoration-none ml-2">Usuarios</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/usuarios.html'" target="_self">Usuarios</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="opcion5">
+                <a href='#opcion5' class="text-center text-dark text-decoration-none ml-2">Comentarios</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/comentarioProveedor.html'" target="_self">Comentarios</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="opcion6">
+                <a href='#opcion6' class="text-center text-dark text-decoration-none ml-2">Agendamiento</a>
+                <ul>
+                    <li>
+                        <a onclick="location.href='../adminUser/agendamientoProveedor.html'" target="_self">Agendamiento</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <div class="contenido container-fluid justify-content-around">
+
+        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi
+                        bi-arrow-bar-right menu-bar icono" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0
+                            .5.5h5.793l-2.147
+                            2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0
+                            0-.708l-3-3a.5.5 0
+                            0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5
+                            0 0
+                            1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z" />
+            </svg>
+        <h1 class=" bg-dark text-white text-center rounded">Comentarios de proveedores</h1>
+
+        <div class="row container-fluid">
+            <div class=" col-12 btn-group ">
+                <button type="button" class="btn btn-primary col-auto">1. Comentario</button>
+                <button type="button" class="btn btn-primary col-auto">2. Comentario</button>
+                <button type="button" class="btn btn-primary col-auto">3. Comentario</button>
+                <button type="button" class="btn btn-primary col-auto">n. Comentario</button>
+            </div>
+
+        </div>
+        <div class=" col-4 mt-5 ">
+            <button type="button" onclick="" class="btn btn-success" id="guardar">Guardar</button>
+            <button type="button" class="btn btn-danger" id="borrar">Borrar</button>
+            <button type="button" class="btn btn-info" id="responder">Responder</button>
+        </div>
+        <div class="col-12 justify-content-lg-around">
+            <textarea name="comentarios" id="comentario" class="textarea"></textarea>
+        </div>
+    </div>
+    <script src="../js/abrirMenu.js"></script>
+</body>
+
+</html>

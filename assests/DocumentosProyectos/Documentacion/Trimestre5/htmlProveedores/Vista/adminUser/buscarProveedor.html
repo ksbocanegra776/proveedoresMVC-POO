@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../assets/imagenes/header-logo.png">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styleGeneralModul.css">
+    <link rel="stylesheet" href="../css/registroProveedor.css">
+
+    <title>Buscar Proveedor</title>
+</head>
+
+<body>
+
+    <nav style="width: auto;height: 640px;">
+
+        <div class="contenido">
+
+            </br>
+
+            <div class="principalContainer limit">
+                <div class="text-center mt-5">
+                    <b>
+                        <h3> Consultar Proveedores</h3>
+                    </b>
+                </div>
+                <div class="paginacion m-6">
+                    <button class="btn btn-secondary rounded-0 col-4" onclick="location.href='buscarProveedor.html'" target="_self">Consultar  Proveedor</button>
+                    <button class="btn btn-secondary rounded-0 col-4" onclick="location.href='registroProveedor.html'" target="_self">Ingresar Proveedor </button>
+                </div>
+
+
+                <div class="col-4" style="margin-top: 5px;margin-left: 13%;">
+                    <button type="button" name="exit" class="ml-5 col-6 btn btn-outline-dark p-3 " onclick="location.href='adminPrincipal.html'" target="_self">Regresar</button>
+
+                    <div class="col-12 mt-5" style="margin-top: 5px;margin-left: 25%;">
+                        <div class="col-12">
+                            <form action="" method="post" class="formSearch">
+                                <input type="number" name="buscarDato" placeholder="Busqueda" class="ml-3">
+                                <input type="submit" name="buscar" value="Buscar" class="search ml-3 mt-1">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="containerFormSearch">
+                    <div class="row ">
+
+                        <div class="col-12">
+
+
+
+                            <div class="row contenedorInfo" style="width: 80%;">
+                                <div class="container col-12 p-3 " style="width: 80%; margin-left: 10%;">
+                                    <form class="form-flex responsive  ml-2">
+                                        <div class="col-auto justify-content-center container" style="width: 100%;">
+
+                                            <label for="">Razón Social :</label>
+                                            <input class="col-auto text-center " type="text " id="razonSocial " name="razonSocial " value=" " disabled><br> Número Documento:
+
+                                            <br>
+                                            <input class="col-auto  text-center " type="number" id="idProveedor" name="idProveedor" value="" disabled><br> Actividad Comercial :<br>
+                                            <input class="col-auto text-center " type="text " id="actividadcomercial " name="actividadcomercial " value=" " disabled><br> Ciudad  :
+
+                                            <br>
+                                            <input class="col-auto  text-center " type="text" id="ciudad" name="ciudad" value="" disabled><br> Departamento :
+
+                                            <br>
+                                            <input class="col-auto text-center " type="text " id="departamento " name="departamento " value=" " disabled><br>  Direccion :
+
+                                            <br>
+                                            <input class="col-auto  text-center " type="text" id="direccionEmpresa" name="direccionEmpresa" value="" disabled><br> Teléfono Empresa:
+
+                                            <br>
+                                            <input class="col-auto text-center " type="number " id="telefonoEmpresa " name="telefonoEmpresa " value=" " disabled><br> Tipo convenio :<br>
+                                            <input class="col-auto  text-center " type="text" id="tipoConvenio" name="tipoConvenio" value="" disabled><br> Estado :
+
+                                            <br>
+                                            <input class=t "col-auto ext-center " type="text " id="estado " name="estado " value=" " disabled><br> Email : <br>
+                                            <input class="col-12 text-center " type="text " id="codProve " name="codProve " value=" " disabled><br> Codigo :
+
+                                            <br>
+                                            <input class="col-12 text-center " type="email " id=" " name="email " value=" " disabled><br>
+                                            <div class="justify-content-center ">
+
+                                                <td><a href=\ "../../controller/deshabilitarProveedor.php\ " class='col-auto p-1 mt-5 btn btn-outline-info'>Deshabilitar</a><a href="dataProveedor.html " class=' col-auto p-1 ml-5 mt-5 btn btn-outline-success'>Actualizar</a></td>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!--scripts-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+    <script src="../js/abrirMenu.js "></script>
+
+</body>
+
+</html>

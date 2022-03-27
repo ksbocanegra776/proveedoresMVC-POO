@@ -1,0 +1,2100 @@
+<html
+        xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title>Jira</title>
+<style type="text/css">
+table {
+    mso-displayed-decimal-separator:"\,";
+    mso-displayed-thousand-separator:"\.";
+}
+body
+{
+    margin: 0px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color:black;
+}
+
+</style>
+<META HTTP-EQUIV="Content-Type" Content="application/vnd.ms-excel; charset=UTF-8">
+<!-- JRA-7598 - ensure fields (e.g. description) occupy only one cell - even fields containing newlines. -->
+<!--
+Vertical align all cells to the top, in order to align all issue rows of issuetable to the top,
+since Excel does not use or save the css files it is hardcoded here.
+-->
+<style>
+@page
+{
+mso-page-orientation:landscape;
+margin:.25in .25in .5in .25in;
+mso-header-margin:.5in;
+mso-footer-margin:.25in;
+mso-footer-data:"&R&P of &N";
+mso-horizontal-page-align:center;
+mso-vertical-page-align:center;
+}
+
+td.issuekey,
+td.issuetype,
+td.status {
+    mso-style-parent: "";
+    mso-number-format: \@;
+    text-align: left;
+}
+br
+{
+    mso-data-placement:same-cell;
+}
+
+td
+{
+    vertical-align: top;
+}
+</style>
+
+<!--[if gte mso 9]><xml>
+<x:ExcelWorkbook>
+<x:ExcelWorksheets>
+<x:ExcelWorksheet>
+<x:Name>general_report</x:Name>
+<x:WorksheetOptions>
+<x:Print>
+<x:ValidPrinterInfo/>
+</x:Print>
+</x:WorksheetOptions>
+</x:ExcelWorksheet>
+</x:ExcelWorksheets>
+</x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+<body>
+
+<table border="1">
+    <tr bgcolor="#205081" height="30">
+        <td colspan="46">
+            <img src="https://dppruebas.atlassian.net/images/icon-jira-software-logo.png" width="57" height="30" border="0" alt="Jira">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="46">
+            <a href="https://dppruebas.atlassian.net/issues/?jql=project+%3D+%22DPTES%22+ORDER+BY+created+DESC">Jira</a>
+        </td>
+    </tr>
+    <tr>
+                <td colspan="46">
+            Mostrando <strong>24</strong> incidencias como en <strong>26/mar/22 11:30 AM</strong>.
+        </td>
+    </tr>
+</table>
+
+
+
+
+                                        <table id="issuetable" class="aui " border="1" cellpadding="3" cellspacing="1" width="100%">
+                        <thead>
+        <tr class="rowHeader">
+            
+                                                            <th class="colHeaderLink headerrow-project" data-id="project">
+                            Proyecto
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuekey" data-id="issuekey">
+                            Clave
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-summary" data-id="summary">
+                            Resumen
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuetype" data-id="issuetype">
+                            Tipo de Incidencia
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-status" data-id="status">
+                            Estado
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-priority" data-id="priority">
+                            Prioridad
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-resolution" data-id="resolution">
+                            Resolución
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-assignee" data-id="assignee">
+                            Responsable
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-reporter" data-id="reporter">
+                            Informador
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-creator" data-id="creator">
+                            Creador
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-created" data-id="created">
+                            Creada
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-lastViewed" data-id="lastViewed">
+                            Vista por Última Vez
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-updated" data-id="updated">
+                            Actualizada
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-resolutiondate" data-id="resolutiondate">
+                            Resuelta
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-versions" data-id="versions">
+                            Versiones afectadas
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-fixVersions" data-id="fixVersions">
+                            Versiones corregidas
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-components" data-id="components">
+                            Componentes
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-duedate" data-id="duedate">
+                            Fecha de vencimiento
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-votes" data-id="votes">
+                            Votos
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-watches" data-id="watches">
+                            Interesados
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-thumbnail" data-id="thumbnail">
+                            Imágenes
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timeoriginalestimate" data-id="timeoriginalestimate">
+                            Estimación original
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timeestimate" data-id="timeestimate">
+                            Estimación Restante
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timespent" data-id="timespent">
+                            Tiempo Trabajado
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-workratio" data-id="workratio">
+                            Relación de trabajo
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-subtasks" data-id="subtasks">
+                            Subtareas
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuelinks" data-id="issuelinks">
+                            Incidencias Enlazadas
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-environment" data-id="environment">
+                            Entorno
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-description" data-id="description">
+                            Descripción
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-security" data-id="security">
+                            Nivel de Seguridad
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-progress" data-id="progress">
+                            Progreso
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregateprogress" data-id="aggregateprogress">
+                            Σ Progreso
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimespent" data-id="aggregatetimespent">
+                            Σ Tiempo empleado
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimeestimate" data-id="aggregatetimeestimate">
+                            Σ Estimación Restante
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimeoriginalestimate" data-id="aggregatetimeoriginalestimate">
+                            Σ Estimación original
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-labels" data-id="labels">
+                            Etiquetas
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-statuscategorychangedate" data-id="statuscategorychangedate">
+                            Categoría de estado cambiada
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-statusCategory" data-id="statusCategory">
+                            Categoría de estado
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-parent" data-id="parent">
+                            Padre
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10021" data-id="customfield_10021">
+                            Flagged
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10017" data-id="customfield_10017">
+                            Issue color
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10019" data-id="customfield_10019">
+                            Rank
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10020" data-id="customfield_10020">
+                            Sprint
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10015" data-id="customfield_10015">
+                            Start date
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10016" data-id="customfield_10016">
+                            Story point estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10000" data-id="customfield_10000">
+                            development
+                                                    </th>
+                                                                    </tr>
+    </thead>
+    <tbody>
+                    
+
+                <tr id="issuerow10023" rel="10023" data-issuekey="DPTES-24" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-24" href="https://dppruebas.atlassian.net/browse/DPTES-24">DPTES-24</a>
+</td>
+                                            <td class="summary"><p>
+                Módulo agendamiento
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;En curso&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;El responsable está trabajando actualmente en esta incidencia.&lt;/span&gt;">En curso</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    <em>Sin resolver</em>
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 26/mar/22 2:30 AM </td>
+                                            <td class="lastViewed"> 26/mar/22 11:21 AM </td>
+                                            <td class="updated"> 26/mar/22 2:31 AM </td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description"></td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 2:31 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-yellow
+            jira-issue-status-lozenge-max-width-medium">En curso</span>
+</td>
+                                            <td class="parent">            Pruebas Módulo Usuario Aux
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i00053:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016">    5
+</td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10022" rel="10022" data-issuekey="DPTES-23" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-23" href="https://dppruebas.atlassian.net/browse/DPTES-23">DPTES-23</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">DPTES-22</span>
+                Se evidencia que el alert que tiene la herramienta no corresponde a la actividad en el momento que se intenta crear dos usuarios con el mismo tipo y número de documento.
+    </p>
+</td>
+                                            <td class="issuetype">    Subtarea
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;En curso&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;El responsable está trabajando actualmente en esta incidencia.&lt;/span&gt;">En curso</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    <em>Sin resolver</em>
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 26/mar/22 2:22 AM </td>
+                                            <td class="lastViewed"> 26/mar/22 2:40 AM </td>
+                                            <td class="updated"> 26/mar/22 2:41 AM </td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description"></td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 2:40 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-yellow
+            jira-issue-status-lozenge-max-width-medium">En curso</span>
+</td>
+                                            <td class="parent">            Creación de usuario - Modulo proveedor
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0004v:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10021" rel="10021" data-issuekey="DPTES-22" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-22" href="https://dppruebas.atlassian.net/browse/DPTES-22">DPTES-22</a>
+</td>
+                                            <td class="summary"><p>
+                Creación de usuario - Modulo proveedor
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;En curso&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;El responsable está trabajando actualmente en esta incidencia.&lt;/span&gt;">En curso</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    <em>Sin resolver</em>
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 26/mar/22 2:18 AM </td>
+                                            <td class="lastViewed"> 26/mar/22 2:19 AM </td>
+                                            <td class="updated"> 26/mar/22 2:26 AM </td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks">                                        DPTES-23                        </td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description"></td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 2:18 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-yellow
+            jira-issue-status-lozenge-max-width-medium">En curso</span>
+</td>
+                                            <td class="parent">            Pruebas Módulo Administrador
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0004n:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10020" rel="10020" data-issuekey="DPTES-21" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-21" href="https://dppruebas.atlassian.net/browse/DPTES-21">DPTES-21</a>
+</td>
+                                            <td class="summary"><p>
+                Actualizar asesores activos
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 26/mar/22 1:53 AM </td>
+                                            <td class="lastViewed"> 26/mar/22 1:57 AM </td>
+                                            <td class="updated"> 26/mar/22 2:00 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 2:00 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realiza actualización satisfactoria de los datos del asesor Comercial. Se adjunta evidencia.
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 2:00 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas Módulo Administrador
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0004f:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016">    5
+</td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10019" rel="10019" data-issuekey="DPTES-20" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-20" href="https://dppruebas.atlassian.net/browse/DPTES-20">DPTES-20</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">DPTES-18</span>
+                Se realizan pruebas en el formulario de registro, dejando campos vacíos y se evidencia que el sistema permite guardar información. Se reporta error al área de desarrollo.
+    </p>
+</td>
+                                            <td class="issuetype">    Subtarea
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;En curso&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;El responsable está trabajando actualmente en esta incidencia.&lt;/span&gt;">En curso</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    <em>Sin resolver</em>
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 26/mar/22 12:21 AM </td>
+                                            <td class="lastViewed"> 26/mar/22 12:25 AM </td>
+                                            <td class="updated"> 26/mar/22 12:25 AM </td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a href="https://dppruebas.atlassian.net/secure/attachment/10002/Registro+en+BD.jpeg">
+            Registro en BD.jpeg
+        </a>
+    </td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description"></td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 12:22 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-yellow
+            jira-issue-status-lozenge-max-width-medium">En curso</span>
+</td>
+                                            <td class="parent">            Pruebas modulo registro
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i00047:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016">    10
+</td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10018" rel="10018" data-issuekey="DPTES-19" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-19" href="https://dppruebas.atlassian.net/browse/DPTES-19">DPTES-19</a>
+</td>
+                                            <td class="summary"><p>
+                Pruebas modulo Usuario
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 26/mar/22 12:05 AM </td>
+                                            <td class="lastViewed"> 26/mar/22 12:13 AM </td>
+                                            <td class="updated"> 26/mar/22 12:16 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 12:16 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realiza pruebas del modulo de usuario, se validan todos los campos. Sistemas realiza el ingreso correcto. Se adjunta evidencias: [https://onedrive.live.com/?id=72B694D6D3E5F4A4%21127&amp;cid=72B694D6D3E5F4A4|https://onedrive.live.com/?id=72B694D6D3E5F4A4%21127&amp;cid=72B694D6D3E5F4A4|smart-link] 
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 12:16 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas  Home DP
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0003z:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016">    4
+</td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10017" rel="10017" data-issuekey="DPTES-18" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-18" href="https://dppruebas.atlassian.net/browse/DPTES-18">DPTES-18</a>
+</td>
+                                            <td class="summary"><p>
+                Pruebas modulo registro
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 26/mar/22 12:05 AM </td>
+                                            <td class="lastViewed"> 26/mar/22 10:13 AM </td>
+                                            <td class="updated"> 26/mar/22 11:26 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 11:26 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks">                                        DPTES-20                        </td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description"></td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 11:26 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas  Home DP
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0003r:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10016" rel="10016" data-issuekey="DPTES-17" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-17" href="https://dppruebas.atlassian.net/browse/DPTES-17">DPTES-17</a>
+</td>
+                                            <td class="summary"><p>
+            <span class="parentIssue">DPTES-2</span>
+                Se diligencia el formulario de contáctenos, Se evidencia que la información no se esta enviando al correo
+    </p>
+</td>
+                                            <td class="issuetype">    Subtarea
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 9:30 PM </td>
+                                            <td class="lastViewed"> 26/mar/22 11:29 AM </td>
+                                            <td class="updated"> 26/mar/22 11:29 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 11:26 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description"></td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 11:26 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Prueba formulario Contactenos
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0003j:
+  </td>
+                                            <td class="customfield_10020">Tablero Sprint 1</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016">    10
+</td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10015" rel="10015" data-issuekey="DPTES-16" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-16" href="https://dppruebas.atlassian.net/browse/DPTES-16">DPTES-16</a>
+</td>
+                                            <td class="summary"><p>
+                Actualizar usuario de proveedor
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 8:39 PM </td>
+                                            <td class="lastViewed"> 26/mar/22 2:37 AM </td>
+                                            <td class="updated"> 26/mar/22 2:38 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 2:38 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realiza actualización satisfactoria del usuario en el módulo de proveedores. Se adjunta evidencia.
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 2:38 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas Módulo Administrador
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0003b:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016">    1
+</td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10014" rel="10014" data-issuekey="DPTES-15" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-15" href="https://dppruebas.atlassian.net/browse/DPTES-15">DPTES-15</a>
+</td>
+                                            <td class="summary"><p>
+                agregar un usuario en el modulo de proveedores
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 8:38 PM </td>
+                                            <td class="lastViewed"> 26/mar/22 2:32 AM </td>
+                                            <td class="updated"> 26/mar/22 2:34 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 2:34 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realiza ingreso satisfactorio de usuario, desde el módulo de proveedores. Se adjunta evidencia.
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 2:34 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas Módulo Administrador
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0004j:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10013" rel="10013" data-issuekey="DPTES-14" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-14" href="https://dppruebas.atlassian.net/browse/DPTES-14">DPTES-14</a>
+</td>
+                                            <td class="summary"><p>
+                Eliminar Porveedor
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;En curso&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;El responsable está trabajando actualmente en esta incidencia.&lt;/span&gt;">En curso</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    <em>Sin resolver</em>
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 8:36 PM </td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="updated"> 26/mar/22 2:38 AM </td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description"></td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 2:38 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-yellow
+            jira-issue-status-lozenge-max-width-medium">En curso</span>
+</td>
+                                            <td class="parent">            Pruebas Módulo Administrador
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0002v:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10012" rel="10012" data-issuekey="DPTES-13" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-13" href="https://dppruebas.atlassian.net/browse/DPTES-13">DPTES-13</a>
+</td>
+                                            <td class="summary"><p>
+                Inactivar Proveedor
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 8:36 PM </td>
+                                            <td class="lastViewed"> 26/mar/22 1:48 AM </td>
+                                            <td class="updated"> 26/mar/22 1:51 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 1:51 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realiza búsqueda del proveedor y se inactiva el proveedor en el sistema. Se adjunta evidencia: [https://onedrive.live.com/?id=72B694D6D3E5F4A4%21117&amp;cid=72B694D6D3E5F4A4|https://onedrive.live.com/?id=72B694D6D3E5F4A4%21117&amp;cid=72B694D6D3E5F4A4|smart-link] 
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 1:51 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas Módulo Administrador
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0002n:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016">    1
+</td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10011" rel="10011" data-issuekey="DPTES-12" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-12" href="https://dppruebas.atlassian.net/browse/DPTES-12">DPTES-12</a>
+</td>
+                                            <td class="summary"><p>
+                herramienta no guarda en la base de datos
+    </p>
+</td>
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 2:08 PM </td>
+                                            <td class="lastViewed"> 26/mar/22 10:14 AM </td>
+                                            <td class="updated"> 24/mar/22 2:29 PM </td>
+                                            <td class="resolutiondate"> 24/mar/22 2:29 PM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">                        Spring1            </td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    24/mar/22
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se diligencia todos los campos, sistema no guarda registro en la base de datos, se reporta falla al área de desarrollo
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 24/mar/22 2:29 PM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017">      purple
+  </td>
+                                            <td class="customfield_10019">      0|i0002f:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015">          <span title="23/mar/22"><time datetime="2022-03-23">23/mar/22</time></span>
+    </td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10010" rel="10010" data-issuekey="DPTES-11" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-11" href="https://dppruebas.atlassian.net/browse/DPTES-11">DPTES-11</a>
+</td>
+                                            <td class="summary"><p>
+                Pruebas Módulo Usuario Aux
+    </p>
+</td>
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;En curso&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;El responsable está trabajando actualmente en esta incidencia.&lt;/span&gt;">En curso</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    <em>Sin resolver</em>
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 1:46 PM </td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="updated"> 26/mar/22 11:27 AM </td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    25/mar/22
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realizara pruebas a este Modulo, el cual es solo de consulta
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 11:27 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-yellow
+            jira-issue-status-lozenge-max-width-medium">En curso</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017">      orange
+  </td>
+                                            <td class="customfield_10019">      0|i00027:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015">          <span title="24/mar/22"><time datetime="2022-03-24">24/mar/22</time></span>
+    </td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10009" rel="10009" data-issuekey="DPTES-10" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-10" href="https://dppruebas.atlassian.net/browse/DPTES-10">DPTES-10</a>
+</td>
+                                            <td class="summary"><p>
+                Pruebas Módulo Administrador
+    </p>
+</td>
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 1:38 PM </td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="updated"> 26/mar/22 11:27 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 11:27 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    24/mar/22
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realizaran pruebas al módulo de administrador (Creación de proveedor, Creación Asesor, actualización de datos, habilitar o deshabilitar asesor)
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 11:27 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017">      green
+  </td>
+                                            <td class="customfield_10019">      0|i0001z:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015">          <span title="23/mar/22"><time datetime="2022-03-23">23/mar/22</time></span>
+    </td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10008" rel="10008" data-issuekey="DPTES-9" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-9" href="https://dppruebas.atlassian.net/browse/DPTES-9">DPTES-9</a>
+</td>
+                                            <td class="summary"><p>
+                Pruebas  Home DP
+    </p>
+</td>
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 1:35 PM </td>
+                                            <td class="lastViewed"> 26/mar/22 2:43 AM </td>
+                                            <td class="updated"> 26/mar/22 11:27 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 11:27 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    24/mar/22
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realizaran pruebas de acceso al aplicativo Web Dp, formulario de Contáctenos, Formulario de registro, Ingreso al Modulo (administrador /Usuario aux)
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 11:27 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017">      purple
+  </td>
+                                            <td class="customfield_10019">      0|i0001r:
+  </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10015">          <span title="23/mar/22"><time datetime="2022-03-23">23/mar/22</time></span>
+    </td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10007" rel="10007" data-issuekey="DPTES-8" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-8" href="https://dppruebas.atlassian.net/browse/DPTES-8">DPTES-8</a>
+</td>
+                                            <td class="summary"><p>
+                Actualizar datos del proveedor
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 1:32 PM </td>
+                                            <td class="lastViewed"> 26/mar/22 1:44 AM </td>
+                                            <td class="updated"> 26/mar/22 1:47 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 1:47 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realiza actualización satisfactorias de los datos del proveedor. Se adjunta evidencia: [https://onedrive.live.com/?id=72B694D6D3E5F4A4%21117&amp;cid=72B694D6D3E5F4A4|https://onedrive.live.com/?id=72B694D6D3E5F4A4%21117&amp;cid=72B694D6D3E5F4A4|smart-link] 
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 1:47 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas Módulo Administrador
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0001j:
+  </td>
+                                            <td class="customfield_10020">Tablero Sprint 1</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016">    3
+</td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10006" rel="10006" data-issuekey="DPTES-7" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-7" href="https://dppruebas.atlassian.net/browse/DPTES-7">DPTES-7</a>
+</td>
+                                            <td class="summary"><p>
+                Consulta Porvedor
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 1:32 PM </td>
+                                            <td class="lastViewed"> 26/mar/22 11:28 AM </td>
+                                            <td class="updated"> 26/mar/22 11:28 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 1:43 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description"></td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 1:43 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas Módulo Administrador
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0001b:
+  </td>
+                                            <td class="customfield_10020">Tablero Sprint 1</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016">    3
+</td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10005" rel="10005" data-issuekey="DPTES-6" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-6" href="https://dppruebas.atlassian.net/browse/DPTES-6">DPTES-6</a>
+</td>
+                                            <td class="summary"><p>
+                Creación de Proveedor y Asesor Comercial
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">    <em>sin asignar</em>
+</td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 1:31 PM </td>
+                                            <td class="lastViewed"> 24/mar/22 1:59 PM </td>
+                                            <td class="updated"> 24/mar/22 3:01 PM </td>
+                                            <td class="resolutiondate"> 24/mar/22 3:01 PM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">                        Spring1            </td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description"></td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 24/mar/22 3:01 PM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas Módulo Administrador
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i00013:
+  </td>
+                                            <td class="customfield_10020">Tablero Sprint 1</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016">    6
+</td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10004" rel="10004" data-issuekey="DPTES-5" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-5" href="https://dppruebas.atlassian.net/browse/DPTES-5">DPTES-5</a>
+</td>
+                                            <td class="summary"><p>
+                Ingreso al modulo Administrador (Porveedores)
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 1:30 PM </td>
+                                            <td class="lastViewed"> 24/mar/22 8:15 PM </td>
+                                            <td class="updated"> 24/mar/22 8:17 PM </td>
+                                            <td class="resolutiondate"> 24/mar/22 8:17 PM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realizan pruebas satisfactorias de ingreso al modulo administrador. Se adjunta evidencias: [https://onedrive.live.com/?id=72B694D6D3E5F4A4%21111&amp;cid=72B694D6D3E5F4A4|https://onedrive.live.com/?id=72B694D6D3E5F4A4%21111&amp;cid=72B694D6D3E5F4A4|smart-link] 
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 24/mar/22 8:17 PM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas Módulo Administrador
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0000v:
+  </td>
+                                            <td class="customfield_10020">Tablero Sprint 1</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10003" rel="10003" data-issuekey="DPTES-4" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-4" href="https://dppruebas.atlassian.net/browse/DPTES-4">DPTES-4</a>
+</td>
+                                            <td class="summary"><p>
+                Habilitar permisos usuario Administrador (activar)
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 1:30 PM </td>
+                                            <td class="lastViewed"> 24/mar/22 8:03 PM </td>
+                                            <td class="updated"> 24/mar/22 8:05 PM </td>
+                                            <td class="resolutiondate"> 24/mar/22 8:05 PM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realizan pruebas satisfactorias de actualización del rol y cargo del usuario. Se adjunta evidencias: [https://onedrive.live.com/?id=72B694D6D3E5F4A4%21111&amp;cid=72B694D6D3E5F4A4|https://onedrive.live.com/?id=72B694D6D3E5F4A4%21111&amp;cid=72B694D6D3E5F4A4|smart-link] 
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 24/mar/22 8:05 PM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas  Home DP
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0000n:
+  </td>
+                                            <td class="customfield_10020">Tablero Sprint 1</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10002" rel="10002" data-issuekey="DPTES-3" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-3" href="https://dppruebas.atlassian.net/browse/DPTES-3">DPTES-3</a>
+</td>
+                                            <td class="summary"><p>
+                Registro de usuario administrador
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">    <em>sin asignar</em>
+</td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 1:30 PM </td>
+                                            <td class="lastViewed"> 24/mar/22 8:01 PM </td>
+                                            <td class="updated"> 24/mar/22 8:02 PM </td>
+                                            <td class="resolutiondate"> 24/mar/22 8:02 PM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description">      Se realizan pruebas satisfactorias de registro de un usuario, se asigno horario y rol al mismo.  Se adjunta evidencias: [https://onedrive.live.com/?id=72B694D6D3E5F4A4%21111&amp;cid=72B694D6D3E5F4A4|https://onedrive.live.com/?id=72B694D6D3E5F4A4%21111&amp;cid=72B694D6D3E5F4A4|smart-link] 
+  </td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 24/mar/22 8:02 PM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas  Home DP
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0000f:
+  </td>
+                                            <td class="customfield_10020">Tablero Sprint 1</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10001" rel="10001" data-issuekey="DPTES-2" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-2" href="https://dppruebas.atlassian.net/browse/DPTES-2">DPTES-2</a>
+</td>
+                                            <td class="summary"><p>
+                Prueba formulario Contactenos
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 1:29 PM </td>
+                                            <td class="lastViewed"> 24/mar/22 9:29 PM </td>
+                                            <td class="updated"> 26/mar/22 11:27 AM </td>
+                                            <td class="resolutiondate"> 26/mar/22 11:27 AM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">                        Spring1            </td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks">                                        DPTES-17                        </td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description"></td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 26/mar/22 11:27 AM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas  Home DP
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i00007:
+  </td>
+                                            <td class="customfield_10020">Tablero Sprint 1</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+
+
+                <tr id="issuerow10000" rel="10000" data-issuekey="DPTES-1" class="issuerow">
+                                            <td class="project">    Dptesting
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DPTES-1" href="https://dppruebas.atlassian.net/browse/DPTES-1">DPTES-1</a>
+</td>
+                                            <td class="summary"><p>
+                Acceso url aplicativo Web Dp
+    </p>
+</td>
+                                            <td class="issuetype">    Historia
+</td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Finalizada&lt;/span&gt;">Finalizada</span>    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="resolution">    Listo
+</td>
+                                            <td class="assignee">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="reporter">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="creator">            Karina Susana Bocanegra Cupitra
+    </td>
+                                            <td class="created"> 24/mar/22 1:29 PM </td>
+                                            <td class="lastViewed"> 24/mar/22 7:58 PM </td>
+                                            <td class="updated"> 24/mar/22 8:00 PM </td>
+                                            <td class="resolutiondate"> 24/mar/22 8:00 PM </td>
+                                            <td class="versions">    &nbsp;
+</td>
+                                            <td class="fixVersions">                        Spring1            </td>
+                                            <td class="components">    &nbsp;
+</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="votes">0</td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="timespent"></td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="subtasks"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="environment"></td>
+                                            <td class="description"></td>
+                                            <td class="security"></td>
+                                            <td class="progress"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="labels"></td>
+                                            <td class="statuscategorychangedate"> 24/mar/22 8:00 PM </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Listo</span>
+</td>
+                                            <td class="parent">            Pruebas  Home DP
+    </td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0000b:
+  </td>
+                                            <td class="customfield_10020">Tablero Sprint 1</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10000"></td>
+                    </tr>
+        </tbody>
+    </table>
+    <div class="end-of-stable-message"></div>
+            <table border="1" >
+<tr>
+    <td bgcolor="#dddddd" colspan="46"><font size="1">
+        Generado a las Sat Mar 26 16:30:05 UTC 2022 por Karina Susana Bocanegra Cupitra usando JIRA 1001.0.0-SNAPSHOT#100197-sha1:46df9a591792866771bb3284b5293c213b9c32b3.
+    </font></td>
+</tr>
+</table>
+
+</body>
+</html>

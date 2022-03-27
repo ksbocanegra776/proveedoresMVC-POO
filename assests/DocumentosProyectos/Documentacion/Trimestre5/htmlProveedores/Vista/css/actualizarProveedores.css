@@ -1,0 +1,12 @@
+.labelform {
+    font-size: 19px !important;
+    width: 25px;
+    font-weight: 200;
+    color: black;
+    font-family: italic;
+}
+
+input {
+    font-size: 1em;
+    width: auto;
+}

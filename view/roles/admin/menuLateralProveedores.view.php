@@ -20,7 +20,7 @@
                         <a onclick="location.href='?c=ModulsAdminController&a=creaProvee'" target="_self">Crear Proveedores</a>
                     </li>
                     <li>
-                        <a onclick="location.href='?c=ModulsAdminController&a=searchProv'" target="_self">Buscar Proveedores</a>
+                        <a onclick="location.href='?c=ModulsAdminController&a=searchResponseProv'" target="_self">Buscar Proveedores</a>
                     </li>
                 </ul>
             </li>
@@ -28,7 +28,7 @@
                 <a href='#opcion3' class="text-center text-dark text-decoration-none ml-2">Asesores</a>
                 <ul>
                     <li>
-                        <a onclick="location.href='?c=ModulsAdminController&a=viewAsesor'" target="_self">Asesores</a>
+                        <a onclick="location.href='?c=AsesorController&a=searchAsesor'" target="_self">Asesores</a>
                     </li>
                 </ul>
             </li>
